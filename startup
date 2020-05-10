@@ -1,0 +1,10 @@
+#!/bin/sh
+killall udiskie
+killall connman-gtk
+killall flameshot
+
+udiskie &
+connman-gtk &
+flameshot &
+
+setxkbmap -option caps:super
