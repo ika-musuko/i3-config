@@ -2,10 +2,14 @@
 killall udiskie
 killall connman-gtk
 killall flameshot
+killall fcitx
+killall pulseaudio
 
 udiskie &
 connman-gtk &
 flameshot &
+fcitx &
+pulseaudio -D
 
 setxkbmap -option caps:ctrl_modifier
 
