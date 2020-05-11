@@ -7,4 +7,5 @@ udiskie &
 connman-gtk &
 flameshot &
 
-setxkbmap -option caps:super
+setxkbmap -option caps:ctrl_modifier
+
