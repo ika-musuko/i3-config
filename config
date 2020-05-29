@@ -11,8 +11,8 @@ bindsym $mod+semicolon exec chromium
 bindsym Print          exec flameshot gui
 bindsym $mod+x         exec xfe
 
-# use Alt key as $mod (Mod4 for super)
-set $mod Mod1
+# use super key as $mod (Mod4 for super)
+set $mod Mod4
 
 # window title/border behavior
 default_border pixel 3
@@ -152,16 +152,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 6 px or 6 ppt
+        bindsym j resize grow height 6 px or 6 ppt
+        bindsym k resize shrink height 6 px or 6 ppt
+        bindsym l resize grow width 6 px or 6 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 6 px or 6 ppt
+        bindsym Down resize grow height 6 px or 6 ppt
+        bindsym Up resize shrink height 6 px or 6 ppt
+        bindsym Right resize grow width 6 px or 6 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
