@@ -1,4 +1,11 @@
 #!/bin/sh
+disk_stats() { 
+        disk_space=$(df -h $1 | tail -1)
+        disk_used=$(echo $disk_space | awk '{print $3}')
+        disk_total=$(echo $disk_space | awk '{print $2}')
+        echo "$1: $disk_used/$disk_total"
+}
+
 while :
 do
         time=$(date +"%a %Y-%m-%d %T")
@@ -9,13 +16,8 @@ do
 
         up_time=$(uptime -p | awk '{$1=""; print}')
  
-        disk_root_used=$(df -h / | tail -1 | awk '{print $3}')
-        disk_root_total=$(df -h / | tail -1 | awk '{print $2}')
-        disk_root="/: $disk_root_used/$disk_root_total"
-
-        disk_home_used=$(df -h /home | tail -1 | awk '{print $3}')
-        disk_home_total=$(df -h /home | tail -1 | awk '{print $2}')
-        disk_home="/home: $disk_home_used/$disk_home_total"
+        disk_root=$(disk_stats '/')
+        disk_home=$(disk_stats '/home')
 
         kernel=$(uname -s -r)
 
@@ -23,4 +25,3 @@ do
 
         sleep 0.5
 done
-
