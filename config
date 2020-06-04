@@ -15,7 +15,7 @@ bindsym $mod+x         exec xfe
 set $mod Mod4
 
 # window title/border behavior
-default_border pixel 3
+default_border pixel 1
 default_floating_border normal
 hide_edge_borders smart
 
@@ -174,11 +174,25 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
+    status_command ~/.config/i3/bar
     font pango:monospace 9.5
     colors {
-		background #181818
-	}
+        background #181818
+        statusline #d8d8d8
+    #                      border  backgr. text
+        focused_workspace  #3a5c68 #3a5c68 #f8f8f8
+        active_workspace   #181818 #181818 #888888
+        inactive_workspace #181818 #181818 #888888
+        binding_mode       #8b2f2c #8b2f2c #f8f8f8 
+        urgent_workspace   #8b2f2c #8b2f2c #f8f8f8
+    }
 }
+#
+# class                 border  backgr. text    indicator child_border
+client.focused          #3a5c68 #3a5c68 #ffffff #2e9ef4   #3a5c68
+client.focused_inactive #181818 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #181818 #181818 #888888 #292d2e   #222222
+client.urgent           #8b2f2c #8b2f2c #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-
+client.background       #ffffff

@@ -1,0 +1,29 @@
+#!/bin/sh
+while :
+do
+        time=$(date +"%a %Y-%m-%d %T")
+
+        weather=$(curl "wttr.in/Hayward?m&format=3" | awk '{$1=""; print}')
+
+        cpu_temp=$(sensors coretemp-isa-0000 | head -n 3 | tail -n 1 | awk '{print $4}')
+
+        up_time_days=$(uptime -p | awk '{print $2}')
+        up_time_hours=$(uptime -p | awk '{print $4}')
+        up_time_mins=$(uptime -p | awk '{print $6}')
+        up_time=$(printf "%dd %dh %dm" $up_time_days $up_time_hours $up_time_mins);
+ 
+        disk_root_used=$(df -h / | tail -1 | awk '{print $3}')
+        disk_root_total=$(df -h / | tail -1 | awk '{print $2}')
+        disk_root="/: $disk_root_used/$disk_root_total"
+
+        disk_home_used=$(df -h /home | tail -1 | awk '{print $3}')
+        disk_home_total=$(df -h /home | tail -1 | awk '{print $2}')
+        disk_home="/home: $disk_home_used/$disk_home_total"
+
+        kernel=$(uname -s -r)
+
+        echo "$disk_root | $disk_home | $kernel | U: $up_time | T: $cpu_temp |$weather | $time"
+
+        sleep 0.5
+done
+
