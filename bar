@@ -7,10 +7,7 @@ do
 
         cpu_temp=$(sensors coretemp-isa-0000 | head -n 3 | tail -n 1 | awk '{print $4}')
 
-        up_time_days=$(uptime -p | awk '{print $2}')
-        up_time_hours=$(uptime -p | awk '{print $4}')
-        up_time_mins=$(uptime -p | awk '{print $6}')
-        up_time=$(printf "%dd %dh %dm" $up_time_days $up_time_hours $up_time_mins);
+        up_time=$(uptime -p | awk '{$1=""; print}')
  
         disk_root_used=$(df -h / | tail -1 | awk '{print $3}')
         disk_root_total=$(df -h / | tail -1 | awk '{print $2}')
@@ -22,7 +19,7 @@ do
 
         kernel=$(uname -s -r)
 
-        echo "$disk_root | $disk_home | $kernel | U: $up_time | T: $cpu_temp |$weather | $time"
+        echo "$disk_root | $disk_home | $kernel | U:$up_time | T: $cpu_temp |$weather | $time"
 
         sleep 0.5
 done
