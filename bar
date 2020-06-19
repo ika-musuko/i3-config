@@ -1,16 +1,23 @@
 #!/bin/sh
 disk_stats() { 
-        disk_space=$(df -h $1 | tail -1)
-        disk_used=$(echo $disk_space | awk '{print $3}')
-        disk_total=$(echo $disk_space | awk '{print $2}')
-        echo "$1: $disk_used/$disk_total"
+    disk_space=$(df -h $1 | tail -1)
+    disk_used=$(echo $disk_space | awk '{print $3}')
+    disk_total=$(echo $disk_space | awk '{print $2}')
+    echo "$1: $disk_used/$disk_total"
+}
+
+weather_stats() {
+    output=$(ansiweather -l Hayward,US -s true -a false -w false -h false -p false -d true -i false)
+    temperature=$(echo output | awk '{print $6, $4, $5}') 
+
 }
 
 while :
 do
         time=$(date +"%a %Y-%m-%d %T")
 
-        weather=$(curl "wttr.in/Hayward?m&format=3" | awk '{$1=""; print}')
+        #weather=$(curl "wttr.in/Hayward?m&format=3" | awk '{$1=""; print}')
+        #weather=$(weather_stats)
 
         cpu_temp=$(sensors coretemp-isa-0000 | head -n 3 | tail -n 1 | awk '{print $4}')
 
