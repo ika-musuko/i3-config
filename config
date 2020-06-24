@@ -9,7 +9,7 @@ exec_always --no-startup-id "/home/sherwyn/.config/i3/startup"
 # apps on keybind
 bindsym $mod+semicolon exec chromium
 bindsym Print          exec flameshot gui
-bindsym $mod+x         exec xfe
+bindsym $mod+x         exec pcmanfm
 
 # use super key as $mod (Mod4 for super)
 set $mod Mod4

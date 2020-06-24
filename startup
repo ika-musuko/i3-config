@@ -5,11 +5,12 @@ killall flameshot
 killall fcitx
 killall pulseaudio
 
-udiskie &
+udiskie --tray &
 connman-gtk &
 flameshot &
 fcitx &
 pulseaudio -D
+pasystray &
 
 setxkbmap -option caps:ctrl_modifier
 
