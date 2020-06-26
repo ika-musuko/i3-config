@@ -3,13 +3,15 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 
-# startup apps
+# startup
 exec_always --no-startup-id "/home/sherwyn/.config/i3/startup"
+exec feh --bg-scale "~/Pictures/fujisan2.JPG"
 
 # apps on keybind
-bindsym $mod+semicolon exec chromium
+bindsym $mod+semicolon exec firefox
+bindsym $mod+Shift+semicolon exec firefox
 bindsym Print          exec flameshot gui
-bindsym $mod+x         exec xfe
+bindsym $mod+x         exec pcmanfm
 
 # floating apps
 for_window [class="Pavucontrol"] floating enable
@@ -17,6 +19,8 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Qjackctl"] floating enable
 for_window [class="Connman-gtk"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="qt5ct"] floating enable
+for_window [class="Nitrogen"] floating enable
 
 # use super key as $mod (Mod4 for super)
 set $mod Mod4
@@ -187,20 +191,19 @@ bar {
         background #181818
         statusline #d8d8d8
     #                      border  backgr. text
-        focused_workspace  #3a5c68 #3a5c68 #f8f8f8
-        active_workspace   #181818 #181818 #888888
-        inactive_workspace #181818 #181818 #888888
-        binding_mode       #8b2f2c #8b2f2c #f8f8f8 
-        urgent_workspace   #8b2f2c #8b2f2c #f8f8f8
+        focused_workspace  #66d9ef #181818 #66d9ef
+        active_workspace   #181818 #181818 #75715e
+        inactive_workspace #181818 #181818 #75715e
+        binding_mode       #f92672 #181818 #f92672 
+        urgent_workspace   #f92672 #181818 #f92672
     }
 }
 #
 # class                 border  backgr. text    indicator child_border
-client.focused          #3a5c68 #3a5c68 #ffffff #2e9ef4   #3a5c68
-client.focused_inactive #181818 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #181818 #181818 #888888 #292d2e   #222222
-client.urgent           #8b2f2c #8b2f2c #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #66d9ef #272822 #66d9ef #a6e22e   #66d9ef
+client.focused_inactive #75715e #272822 #75715e #75715e   #75715e
+client.unfocused        #272822 #272822 #888888 #272822   #272822
+client.urgent           #f92672 #272822 #f92672 #f92672   #f92672
+client.placeholder      #000000 #0c0c0c #f8f8f2 #000000   #0c0c0c
 
 client.background       #ffffff
-

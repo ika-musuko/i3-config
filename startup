@@ -4,6 +4,7 @@ killall connman-gtk
 killall flameshot
 killall fcitx
 killall pasystray
+killall blueman-applet
 
 udiskie &
 connman-gtk &
@@ -11,6 +12,7 @@ flameshot &
 fcitx &
 pulseaudio -D
 pasystray &
+blueman-applet &
 
 setxkbmap -option caps:ctrl_modifier
 
