@@ -3,7 +3,7 @@ killall udiskie
 killall connman-gtk
 killall flameshot
 killall fcitx
-killall pulseaudio
+killall pasystray
 
 udiskie --tray &
 connman-gtk &
@@ -11,6 +11,7 @@ flameshot &
 fcitx &
 pulseaudio -D
 pasystray &
+xfce4-power-manager
 
 setxkbmap -option caps:ctrl_modifier
 
