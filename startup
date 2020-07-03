@@ -6,7 +6,7 @@ killall fcitx
 killall pasystray
 killall blueman-applet
 
-udiskie &
+udiskie -t &
 connman-gtk &
 flameshot &
 fcitx &

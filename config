@@ -5,13 +5,14 @@
 
 # startup
 exec_always --no-startup-id "/home/sherwyn/.config/i3/startup"
-exec feh --bg-scale "~/Pictures/fujisan2.JPG"
+exec feh --bg-scale ~/Pictures/fujisan2.jpg
 
 # apps on keybind
-bindsym $mod+semicolon exec firefox
+bindsym $mod+semicolon       exec firefox
 bindsym $mod+Shift+semicolon exec firefox
-bindsym Print          exec flameshot gui
-bindsym $mod+x         exec pcmanfm
+bindsym Print                exec flameshot gui
+bindsym $mod+x               exec pcmanfm
+bindsym $mod+Ctrl+c          exec cmus-update
 
 # floating apps
 for_window [class="Pavucontrol"] floating enable
@@ -21,6 +22,8 @@ for_window [class="Connman-gtk"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="qt5ct"] floating enable
 for_window [class="Nitrogen"] floating enable
+for_window [class="Font-manager"] floating enable
+for_window [class="Fcitx-config-gtk3"] floating enable
 
 # use super key as $mod (Mod4 for super)
 set $mod Mod4
