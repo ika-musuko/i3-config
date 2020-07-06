@@ -14,6 +14,14 @@ bindsym Print                exec flameshot gui
 bindsym $mod+x               exec pcmanfm
 bindsym $mod+Ctrl+c          exec cmus-update
 
+# cmus
+bindsym $mod+Home     exec "cmus-remote -C 'toggle repeat_current'"
+bindsym $mod+End      exec "cmus-remote -u"
+bindsym $mod+Insert   exec "cmus-remote -r"
+bindsym $mod+Delete   exec "cmus-remote -n"
+bindsym $mod+Prior    exec "cmus-remote -k -5"
+bindsym $mod+Next     exec "cmus-remote -k +5"
+
 # floating apps
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
