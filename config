@@ -55,8 +55,11 @@ bindsym $mod+Shift+Return exec termite -d $(xcwd)
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d       exec rofi -show run
 bindsym $mod+Shift+d exec rofi -show drun
+
+# window switch
+bindsym $mod+Tab exec quickswitch
 
 # change focus
 bindsym $mod+h focus left
@@ -150,6 +153,10 @@ bindsym $mod+u workspace prev
 bindsym $mod+i workspace next
 bindsym $mod+Shift+u move container to workspace prev
 bindsym $mod+Shift+i move container to workspace next
+
+# scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
