@@ -5,10 +5,10 @@
 
 # startup 
 exec_always --no-startup-id "/home/sherwyn/.config/i3/startup"
-exec feh --bg-scale ~/Pictures/fuji_utility.jpg  
+exec feh --bg-scale ~/Pictures/rising_fawn.jpg  
 
 # apps on keybind
-bindsym $mod+semicolon exec chromium
+bindsym $mod+semicolon exec firefox
 bindsym Print          exec flameshot gui
 bindsym $mod+x         exec thunar
 
@@ -188,7 +188,7 @@ bar {
         background #181818
         statusline #d8d8d8
     #                      border  backgr. text
-        focused_workspace  #f8f8f8 #181818 #f8f8f8
+        focused_workspace  #66d9ef #181818 #66d9ef
         active_workspace   #181818 #181818 #75715e
         inactive_workspace #181818 #181818 #75715e
         binding_mode       #f92672 #181818 #f92672 
