@@ -5,7 +5,7 @@
 
 # startup
 exec_always --no-startup-id "/home/sherwyn/.config/i3/startup"
-exec feh --bg-scale ~/Pictures/fujisan2.jpg
+exec_always feh --bg-fill ~/Pictures/tnmount.png
 
 # apps on keybind
 bindsym $mod+semicolon       exec firefox
@@ -13,6 +13,8 @@ bindsym $mod+Shift+semicolon exec firefox
 bindsym Print                exec flameshot gui
 bindsym $mod+x               exec pcmanfm
 bindsym $mod+Ctrl+c          exec cmus-update
+bindsym $mod+Ctrl+d          exec cmus-delete
+bindsym $mod+Ctrl+h          workspace 10; append_layout ~/.config/i3/chats.json
 
 # cmus
 bindsym $mod+Home     exec "cmus-remote -C 'toggle repeat_current'"
@@ -32,6 +34,13 @@ for_window [class="qt5ct"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Font-manager"] floating enable
 for_window [class="Fcitx-config-gtk3"] floating enable
+
+# default workspaces for windows
+assign [class="Discord"] 10
+assign [class="Kotatogram"] 10
+assign [class="Telegram"] 10
+assign [class="Telegram"] 10
+assign [class="LINE"] 10
 
 # use super key as $mod (Mod4 for super)
 set $mod Mod4
